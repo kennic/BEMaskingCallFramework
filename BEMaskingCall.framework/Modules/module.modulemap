@@ -1,0 +1,11 @@
+framework module BEMaskingCall {
+  umbrella header "BEMaskingCall.h"
+
+  export *
+  module * { export * }
+}
+
+module BEMaskingCall.Swift {
+    header "BEMaskingCall-Swift.h"
+    requires objc
+}
