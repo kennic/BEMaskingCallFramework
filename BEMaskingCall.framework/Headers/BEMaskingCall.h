@@ -28,4 +28,3 @@ FOUNDATION_EXPORT const unsigned char BEMaskingCallVersionString[];
 #import <BEMaskingCall/ConfigMaskingCallModel.h>
 #import <BEMaskingCall/GlobalService.h>
 #import <BEMaskingCall/CallingViewController.h>
-#import <BEMaskingCall/StringeeImplement.h>
