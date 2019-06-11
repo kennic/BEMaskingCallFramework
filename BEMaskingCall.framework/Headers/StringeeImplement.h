@@ -29,7 +29,7 @@
 
 + (StringeeImplement *)instance;
 
-- (void)connectToStringeeServer:(void(^)(BOOL success))completionHandler;
+- (void)connectToStringeeServer;
 
 - (void)stopRingingWithMessage:(NSString *)message;
 
