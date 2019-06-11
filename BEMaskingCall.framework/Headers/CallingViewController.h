@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AFNetworking/AFNetworking.h>
 @class StringeeCall;
+
 typedef NS_ENUM(NSInteger, ScreenMode) {
     // Cuộc gọi voice đi
     ScreenModeOutgoingVoiceCall,

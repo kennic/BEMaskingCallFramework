@@ -25,9 +25,15 @@ typedef NS_ENUM(NSInteger, SyncStateCalling) {
     // Đang có cuộc gọi đên
     SyncStateCallingOutGoing,
 };
+
 @protocol SPManagerDelegate <NSObject>
+
 - (void) showAlertViewGoingOutTimeoutEngagementID:(NSString*)engagementID;
+- (void) willPresentCallingViewController:(CallingViewController*)vc animated:(BOOL)animated;
+- (void) didEndCalling;
+
 @end
+
 @interface SPManager : NSObject
 
 + (SPManager *)instance;
@@ -61,7 +67,7 @@ typedef NS_ENUM(NSInteger, SyncStateCalling) {
 @property (strong, nonatomic) CallingViewController *callingViewController;
 
 - (void) getConfigMaskingCall;
-- (NSString *) getNumberForCallOut;
+- (NSString*) getNumberForCallOut;
 - (BOOL) isSystemCall;
 - (BOOL) isEnableCallInApp;
 - (BOOL) isEnableMaskingCall;

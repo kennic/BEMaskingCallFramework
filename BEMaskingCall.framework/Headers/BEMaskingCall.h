@@ -16,7 +16,6 @@ FOUNDATION_EXPORT const unsigned char BEMaskingCallVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <BEMaskingCall/PublicHeader.h>
 
-
 #import <BEMaskingCall/SPManager.h>
 #import <BEMaskingCall/BeCommon.h>
 #import <BEMaskingCall/CallManager.h>
