@@ -58,23 +58,22 @@ typedef NS_ENUM(NSInteger, SyncStateCalling) {
 @property (strong, nonatomic) CallingVCModel *callingModel;
 @property (assign, nonatomic) BOOL isDriver;
 @property (nonatomic, strong) UIViewController *presentViewController;
+@property (strong, nonatomic) CallingViewController *callingViewController;
 
 - (void) getConfigMaskingCall;
-- (NSString *)getNumberForCallOut;
-- (BOOL)isSystemCall;
-- (BOOL)isEnableCallInApp;
-- (BOOL)isEnableMaskingCall;
+- (NSString *) getNumberForCallOut;
+- (BOOL) isSystemCall;
+- (BOOL) isEnableCallInApp;
+- (BOOL) isEnableMaskingCall;
 - (int) calTimeOut;
 - (NSArray*) maskingNumber;
 - (NSString*) getNumberMaskWithTrip:(NSString*)tripID withDriverPhoneNumber:(NSString*)driverPhoneNumber;
-- (void)fetchMaskingNumberDriverID:(NSString*)strDriverId  engagementID:(NSString*)engagementID completionHandler:(void(^)(id numberPhone))completionHandler;
-- (void) updateConfigMaskingCall:(id) responseObject driverID:(NSString*)strDriverId  engagementID:(NSString*)engagementID;
-// Instances
-@property (strong, nonatomic) CallingViewController *callingViewController;
-- (void) connectToStringeeServer:(void (^)(BOOL success))complectionBlock;
+- (void) fetchMaskingNumberDriverID:(NSString*)strDriverId engagementID:(NSString*)engagementID completionHandler:(void(^)(id numberPhone))completionHandler;
+- (void) updateConfigMaskingCall:(id) responseObject driverID:(NSString*)strDriverId engagementID:(NSString*)engagementID;
+- (void) connectToStringeeServer;
 - (void) stopRingingWithMessage:(NSString *)message;
 - (void) createCallFollowUserActivity:(NSUserActivity *)userActivity;
 - (BOOL) isMaskingCall;
-- (void)checkMicrophonePermissions:(void (^)(BOOL allowed))completion;
--(void) configMicrophone:(void (^)(BOOL allowed))completion;
+- (void) checkMicrophonePermissions:(void (^)(BOOL allowed))completion;
+- (void) configMicrophone:(void (^)(BOOL allowed))completion;
 @end
