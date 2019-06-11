@@ -74,4 +74,6 @@ typedef NS_ENUM(NSInteger, SyncStateCalling) {
 - (void) stopRingingWithMessage:(NSString *)message;
 - (void) createCallFollowUserActivity:(NSUserActivity *)userActivity;
 - (BOOL) isMaskingCall;
+- (void)checkMicrophonePermissions:(void (^)(BOOL allowed))completion;
+-(void) configMicrophone:(void (^)(BOOL allowed))completion;
 @end
