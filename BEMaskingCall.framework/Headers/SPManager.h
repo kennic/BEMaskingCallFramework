@@ -10,11 +10,12 @@
 #import <CoreTelephony/CTCallCenter.h>
 #import <CallKit/CallKit.h>
 #import "UserModel.h"
-#import "ConfigMaskingCallModel.h"
+//#import "ConfigMaskingCallModel.h"
 #import "BeCustomerInfoModel.h"
 #import "RideInfoModel.h"
 #import "CallingViewController.h"
-#import "CallingVCModel.h"
+#import "BEMaskingCallConfiguration.h"
+
 typedef NS_ENUM(NSInteger, SyncStateCalling) {
     // Chưa có cuộc gọi
     SyncStateCallingNone,
@@ -54,14 +55,14 @@ typedef NS_ENUM(NSInteger, SyncStateCalling) {
 @property (assign, nonatomic) SyncStateCalling isClickOutGoing;
 
 @property (strong, nonatomic) UserModel *myUser;
-@property (strong, nonatomic) ConfigMaskingCallModel *configMaskingCall;
+//@property (strong, nonatomic) ConfigMaskingCallModel *configMaskingCall;
 
 @property (strong, nonatomic) BeCustomerInfoModel *customerInfo;
 @property (strong, nonatomic) RideInfoModel *rideInfo;
 
 @property (nonatomic, strong) NSString *baseURLString;
 @property (nonatomic, strong) NSString *subUrlString;
-@property (strong, nonatomic) CallingVCModel *callingModel;
+@property (strong, nonatomic) BEMaskingCallConfiguration *configuration;
 @property (assign, nonatomic) BOOL isDriver;
 @property (nonatomic, strong) UIViewController *presentViewController;
 @property (strong, nonatomic) CallingViewController *callingViewController;

@@ -19,11 +19,11 @@ FOUNDATION_EXPORT const unsigned char BEMaskingCallVersionString[];
 #import <BEMaskingCall/SPManager.h>
 #import <BEMaskingCall/BeCommon.h>
 #import <BEMaskingCall/CallManager.h>
-#import <BEMaskingCall/CallingVCModel.h>
+#import <BEMaskingCall/BEMaskingCallConfiguration.h>
 #import <BEMaskingCall/RideInfoModel.h>
 #import <BEMaskingCall/UserModel.h>
 #import <BEMaskingCall/BeCustomerInfoModel.h>
 #import <BEMaskingCall/CalloutNumberModel.h>
-#import <BEMaskingCall/ConfigMaskingCallModel.h>
+//#import <BEMaskingCall/ConfigMaskingCallModel.h>
 #import <BEMaskingCall/GlobalService.h>
 #import <BEMaskingCall/CallingViewController.h>

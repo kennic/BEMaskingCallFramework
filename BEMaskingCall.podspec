@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
 spec.name         = "BeMaskingCall"
-spec.version      = "1.0.7"
+spec.version      = "1.1"
 spec.summary      = "BEMaskingCall for be"
 spec.description  = "This is frameWork allows you to make a voip call"
 spec.homepage     = "https://github.com/kennic/BEMaskingCallFramework.git"
