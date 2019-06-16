@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 	@property UIImage *muteOffButtonImage;
 	@property UIImage *acceptButtonImage;
 	@property UIImage *declineButtonImage;
+	@property UIImage *endCallButtonImage;
 	
 	@property NSString *callingText; // Đang gọi ...
 	@property NSString *incomingCallText; // %@ Đang gọi đến ...
