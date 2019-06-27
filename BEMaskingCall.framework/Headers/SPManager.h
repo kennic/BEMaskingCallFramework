@@ -56,6 +56,11 @@ typedef NS_ENUM(NSInteger, SyncStateCalling) {
 
 @property (strong, nonatomic) UserModel *myUser;
 //@property (strong, nonatomic) ConfigMaskingCallModel *configMaskingCall;
+@property (assign, nonatomic) BOOL isRequestMaskingNumber;
+@property (assign, nonatomic) BOOL autoRequestStringeeTokenWhenExpireTime;
+	
+@property (assign, nonatomic) BOOL enableCallInApp;
+@property (assign, nonatomic) BOOL enableMaskingCall;
 
 @property (strong, nonatomic) BeCustomerInfoModel *customerInfo;
 @property (strong, nonatomic) RideInfoModel *rideInfo;
@@ -67,20 +72,21 @@ typedef NS_ENUM(NSInteger, SyncStateCalling) {
 @property (nonatomic, strong) UIViewController *presentViewController;
 @property (strong, nonatomic) CallingViewController *callingViewController;
 
-- (void) getConfigMaskingCall;
 - (NSString*) getNumberForCallOut;
 - (BOOL) isSystemCall;
-- (BOOL) isEnableCallInApp;
-- (BOOL) isEnableMaskingCall;
-- (int) calTimeOut;
+- (BOOL) isGeneralEnabled;
+- (BOOL) isCallInAppEnabled;
+- (BOOL) isMaskingCallEnabled;
+- (int) callTimeOut;
 - (NSArray*) maskingNumber;
 - (NSString*) getNumberMaskWithTrip:(NSString*)tripID withDriverPhoneNumber:(NSString*)driverPhoneNumber;
-- (void) fetchMaskingNumberDriverID:(NSString*)strDriverId engagementID:(NSString*)engagementID completionHandler:(void(^)(id numberPhone))completionHandler;
-- (void) updateConfigMaskingCall:(id) responseObject driverID:(NSString*)strDriverId engagementID:(NSString*)engagementID;
+- (void) fetchMaskingNumberDriverID:(NSString*)driverId engagementID:(NSString*)engagementID needStringeeToken:(BOOL)needStringeeToken completionHandler:(void(^)(id numberPhone, BOOL success))completionHandler;
+- (void) updateConfigMaskingCall:(id)responseObject driverID:(NSString*)driverId engagementID:(NSString*)engagementID;
 - (void) connectToStringeeServer;
 - (void) stopRingingWithMessage:(NSString *)message;
 - (void) createCallFollowUserActivity:(NSUserActivity *)userActivity;
-- (BOOL) isMaskingCall;
+- (BOOL) makeMaskingCall;
 - (void) checkMicrophonePermissions:(void (^)(BOOL allowed))completion;
 - (void) configMicrophone:(void (^)(BOOL allowed))completion;
+- (void) clearMaskingCall;
 @end

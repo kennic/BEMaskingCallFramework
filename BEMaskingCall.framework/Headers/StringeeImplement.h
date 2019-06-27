@@ -34,8 +34,8 @@
 - (void)stopRingingWithMessage:(NSString *)message;
 
 - (void)createCallFollowUserActivity:(NSUserActivity *)userActivity;
-- (BOOL)isMaskingCall;
-- (void)reciverIncomingCallWithStringeeCall:(StringeeCall *)stringeeCall;
+- (BOOL)makeMaskingCall;
+- (void)receiveIncomingCallWithStringeeCall:(StringeeCall *)stringeeCall;
 - (void)callOutgoingScreen;
 - (void)checkOpenCallingVC;
 - (void)incomingFromVoipPush;

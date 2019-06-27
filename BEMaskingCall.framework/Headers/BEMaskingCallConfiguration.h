@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 	@property NSString *callingText; // Đang gọi ...
 	@property NSString *incomingCallText; // %@ Đang gọi đến ...
 	@property NSString *unsuccessfulText; // Cuộc gọi không thành công
+	@property NSString *noConnectionText; // Không có kết nối mạng
 	
 	@property NSString *strLabelTitle;
 	@property NSString *strTracking_Receive_Call_Tap_Speaker;
