@@ -170,6 +170,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import CoreGraphics;
 @import QuartzCore;
+@import UIKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -188,6 +189,16 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 @class NSCoder;
+
+SWIFT_CLASS("_TtC13BEMaskingCall23ConfirmMaskingCallAlert")
+@interface ConfirmMaskingCallAlert : UIView
+@property (nonatomic, copy) void (^ _Nullable didSelectedButton)(NSInteger, BOOL);
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithTitle:(NSString * _Nullable)title message:(NSString * _Nullable)message buttonMaskingNumber:(NSString * _Nullable)buttonMaskingNumber buttonRealNumber:(NSString * _Nullable)buttonRealNumber OBJC_DESIGNATED_INITIALIZER;
+- (void)showMessageWithButton:(void (^ _Nullable)(NSInteger, BOOL))button;
+@end
+
 @class CAAnimation;
 
 SWIFT_CLASS("_TtC13BEMaskingCall20PulsingAnimationCall")
@@ -379,6 +390,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import CoreGraphics;
 @import QuartzCore;
+@import UIKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -397,6 +409,16 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 @class NSCoder;
+
+SWIFT_CLASS("_TtC13BEMaskingCall23ConfirmMaskingCallAlert")
+@interface ConfirmMaskingCallAlert : UIView
+@property (nonatomic, copy) void (^ _Nullable didSelectedButton)(NSInteger, BOOL);
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithTitle:(NSString * _Nullable)title message:(NSString * _Nullable)message buttonMaskingNumber:(NSString * _Nullable)buttonMaskingNumber buttonRealNumber:(NSString * _Nullable)buttonRealNumber OBJC_DESIGNATED_INITIALIZER;
+- (void)showMessageWithButton:(void (^ _Nullable)(NSInteger, BOOL))button;
+@end
+
 @class CAAnimation;
 
 SWIFT_CLASS("_TtC13BEMaskingCall20PulsingAnimationCall")

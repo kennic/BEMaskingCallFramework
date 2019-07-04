@@ -27,12 +27,24 @@ typedef NS_ENUM(NSInteger, SyncStateCalling) {
     SyncStateCallingOutGoing,
 };
 
+/// Các cách thức gọi điện
+typedef NS_ENUM(NSInteger, BECallingState) {
+	// Chưa xác nhận cách thức gọi
+	BECallingStateNotSpecified,
+	
+	/// Gọi điện giấu số
+	BECallingStateMaskingCall,
+	
+	/// Gọi số thường
+	BECallingStateNormal,
+};
+
 @protocol SPManagerDelegate <NSObject>
 
 - (void) showAlertViewGoingOutTimeoutEngagementID:(NSString*)engagementID;
 - (void) willPresentCallingViewController:(CallingViewController*)vc animated:(BOOL)animated;
 - (void) didEndCalling;
-
+- (void) openCallOSWith:(NSString*)phoneNumber;
 @end
 
 @interface SPManager : NSObject
@@ -77,16 +89,22 @@ typedef NS_ENUM(NSInteger, SyncStateCalling) {
 - (BOOL) isGeneralEnabled;
 - (BOOL) isCallInAppEnabled;
 - (BOOL) isMaskingCallEnabled;
+- (BOOL) isEnableAppToPhone;
+- (BECallingState) lastCallingState;
+- (void) saveCallingState:(BECallingState)state;
 - (int) callTimeOut;
 - (NSArray*) maskingNumber;
 - (NSString*) getNumberMaskWithTrip:(NSString*)tripID withDriverPhoneNumber:(NSString*)driverPhoneNumber;
 - (void) fetchMaskingNumberDriverID:(NSString*)driverId engagementID:(NSString*)engagementID needStringeeToken:(BOOL)needStringeeToken completionHandler:(void(^)(id numberPhone, BOOL success))completionHandler;
+- (void) putRememberCallOption:(NSString*)option completionHandler:(void(^)(BOOL success))completionHandler;
 - (void) updateConfigMaskingCall:(id)responseObject driverID:(NSString*)driverId engagementID:(NSString*)engagementID;
 - (void) connectToStringeeServer;
 - (void) stopRingingWithMessage:(NSString *)message;
 - (void) createCallFollowUserActivity:(NSUserActivity *)userActivity;
 - (BOOL) makeMaskingCall;
+- (BOOL)makeCallAppInApp;
 - (void) checkMicrophonePermissions:(void (^)(BOOL allowed))completion;
 - (void) configMicrophone:(void (^)(BOOL allowed))completion;
 - (void) clearMaskingCall;
+- (UIImage*)imageNamed:(NSString*)name;
 @end

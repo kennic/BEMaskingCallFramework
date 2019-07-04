@@ -34,7 +34,9 @@
 - (void)stopRingingWithMessage:(NSString *)message;
 
 - (void)createCallFollowUserActivity:(NSUserActivity *)userActivity;
+- (BOOL) makeCallAppInApp;
 - (BOOL)makeMaskingCall;
+- (void)callDriverPhoneNumber;
 - (void)receiveIncomingCallWithStringeeCall:(StringeeCall *)stringeeCall;
 - (void)callOutgoingScreen;
 - (void)checkOpenCallingVC;

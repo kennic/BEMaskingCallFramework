@@ -35,7 +35,13 @@ NS_ASSUME_NONNULL_BEGIN
 	@property NSString *strTracking_Call_Tap_Mute;
 	@property NSString *strTracking_Receive_Call_Tap_End;
 	@property NSString *strTracking_Call_Tap_End;
-	
+
+    @property NSString *strAlertChooseMaskingTitle;
+    @property NSString *strAlertChooseMaskingDesc;
+    @property NSString *strAlertChooseMaskingMaskingNumberText;
+    @property NSString *strAlertChooseMaskingRealNumberText;
+    @property NSString *strAlertChooseMaskingRememberDesc;
+
 - (void) initDefaultValues:(BOOL) forDriver;
 	
 @end

@@ -14,4 +14,5 @@
 + (void)getConfigMarkingCallompletionHandler:(void(^)(id responseObject))completionHandler;
 + (void)putTrackingSignalWithParameters:(NSDictionary *)params completionHandler:(void(^)(id responseObject))completionHandler;
 + (void)getMaskingNumberWithParameters:(NSDictionary *)params completionHandler:(void(^)(id responseObject))completionHandler;
++ (void)postAutoUseMaskingWithParameters:(NSDictionary *)params completionHandler:(void(^)(id responseObject))completionHandler;
 @end
