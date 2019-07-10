@@ -19,10 +19,8 @@
 typedef NS_ENUM(NSInteger, SyncStateCalling) {
     // Chưa có cuộc gọi
     SyncStateCallingNone,
-    
     // Đang có cuộc gọi đi
     SyncStateCallingInComing,
-    
     // Đang có cuộc gọi đên
     SyncStateCallingOutGoing,
 };
@@ -30,13 +28,11 @@ typedef NS_ENUM(NSInteger, SyncStateCalling) {
 /// Các cách thức gọi điện
 typedef NS_ENUM(NSInteger, BECallingState) {
 	// Chưa xác nhận cách thức gọi
-	BECallingStateNotSpecified,
-	
+	BECallingStateNotSpecified = 0,
 	/// Gọi điện giấu số
-	BECallingStateMaskingCall,
-	
+	BECallingStateMaskingCall = 1,
 	/// Gọi số thường
-	BECallingStateNormal,
+	BECallingStateNormal = 2,
 };
 
 @protocol SPManagerDelegate <NSObject>
@@ -102,9 +98,9 @@ typedef NS_ENUM(NSInteger, BECallingState) {
 - (void) stopRingingWithMessage:(NSString *)message;
 - (void) createCallFollowUserActivity:(NSUserActivity *)userActivity;
 - (BOOL) makeMaskingCall;
-- (BOOL)makeCallAppInApp;
+- (BOOL) makeCallAppInApp;
 - (void) checkMicrophonePermissions:(void (^)(BOOL allowed))completion;
 - (void) configMicrophone:(void (^)(BOOL allowed))completion;
 - (void) clearMaskingCall;
-- (UIImage*)imageNamed:(NSString*)name;
+- (UIImage*) imageNamed:(NSString*)name;
 @end

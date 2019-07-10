@@ -22,11 +22,17 @@ NS_ASSUME_NONNULL_BEGIN
 	@property UIImage *acceptButtonImage;
 	@property UIImage *declineButtonImage;
 	@property UIImage *endCallButtonImage;
-	
+
+	@property NSString *connectingText; // Đang kết nối...
 	@property NSString *callingText; // Đang gọi ...
+	@property NSString *ringingText; // Đang đổ chuông...
 	@property NSString *incomingCallText; // %@ Đang gọi đến ...
 	@property NSString *unsuccessfulText; // Cuộc gọi không thành công
 	@property NSString *noConnectionText; // Không có kết nối mạng
+	@property NSString *busyText; // Số máy bận
+	@property NSString *endCallText; // Kết thúc cuộc gọi
+	@property NSString *missedCallText; // Bạn đã bỏ lỡ cuộc gọi từ %@
+	@property NSString *receviedByOtherText; // Cuộc gọi đã được nhận ở thiết bị khác
 	
 	@property NSString *strLabelTitle;
 	@property NSString *strTracking_Receive_Call_Tap_Speaker;

@@ -33,12 +33,12 @@
 
 - (void)stopRingingWithMessage:(NSString *)message;
 
-- (void)createCallFollowUserActivity:(NSUserActivity *)userActivity;
+- (void) createCallFollowUserActivity:(NSUserActivity *)userActivity;
 - (BOOL) makeCallAppInApp;
-- (BOOL)makeMaskingCall;
-- (void)callDriverPhoneNumber;
-- (void)receiveIncomingCallWithStringeeCall:(StringeeCall *)stringeeCall;
-- (void)callOutgoingScreen;
-- (void)checkOpenCallingVC;
-- (void)incomingFromVoipPush;
+- (BOOL) makeMaskingCall;
+- (void) callDriverPhoneNumber;
+- (void) receiveIncomingCallWithStringeeCall:(StringeeCall *)stringeeCall;
+- (void) callOutgoingScreen;
+- (void) checkOpenCallingVC;
+- (void) incomingFromVoipPush;
 @end
