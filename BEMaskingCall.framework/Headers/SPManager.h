@@ -79,7 +79,12 @@ typedef NS_ENUM(NSInteger, BECallingState) {
 @property (assign, nonatomic) BOOL isDriver;
 @property (nonatomic, strong) UIViewController *presentViewController;
 @property (strong, nonatomic) CallingViewController *callingViewController;
+@property (strong, nonatomic) NSString *callSesstionID;
+@property (strong, nonatomic) NSString *cityDevice;
+@property (strong, nonatomic) NSString *myLocationLatitude;
+@property (strong, nonatomic) NSString *myLocationLongitude;
 
+-(NSString*) generalCallSessionID;
 - (NSString*) getNumberForCallOut;
 - (BOOL) isSystemCall;
 - (BOOL) isGeneralEnabled;

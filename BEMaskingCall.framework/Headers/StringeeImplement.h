@@ -22,7 +22,7 @@
 #define SCR_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define IS_IPHONE UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone
 
-@interface StringeeImplement : NSObject<StringeeConnectionDelegate, StringeeIncomingCallDelegate, CallManagerDelegate>
+@interface StringeeImplement : NSObject<StringeeConnectionDelegate, StringeeIncomingCallDelegate, CallManagerDelegate, StringeeCallDelegate>
 
 @property (strong, nonatomic) StringeeClient *stringeeClient;
 @property (assign, nonatomic) SignalingState signalingState;

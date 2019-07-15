@@ -89,7 +89,7 @@ typedef NS_ENUM(NSInteger, ScreenMode) {
 - (IBAction)callpadTapped:(UIButton *)sender;
 - (IBAction)switchVideoTapped:(UIButton *)sender;
 - (IBAction)cameraTapped:(UIButton *)sender;
-
+- (void) signalEnded;
 - (void)stopTimer;
 - (void)startTimer;
 - (void)answerCallWithAnimation:(BOOL)isAnimation;

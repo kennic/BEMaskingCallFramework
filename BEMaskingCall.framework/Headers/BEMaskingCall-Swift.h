@@ -169,6 +169,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import CoreGraphics;
+@import ObjectiveC;
 @import QuartzCore;
 @import UIKit;
 #endif
@@ -187,6 +188,146 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="BEMaskingCall",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
+
+
+SWIFT_CLASS("_TtC13BEMaskingCall26BeMaskingCallEventTracking")
+@interface BeMaskingCallEventTracking : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BeMaskingCallEventTracking * _Nonnull shared;)
++ (BeMaskingCallEventTracking * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// Hàm thực hiện tracking call_tap_speaker
+/// \param user_id id của người dùng
+///
+/// \param user_city Ha Noi, Ho Chi Minh
+///
+/// \param speaker_status on/off
+///
+/// \param call_session_id lấy giá trị uuid [[NSUUID UUID] UUIDString]
+///
+- (void)eventTrackingCallTapSpeakerWithReceive:(BOOL)receive params:(NSDictionary<NSString *, id> * _Nonnull)params;
+/// Hàm thực hiện tracking customer_call_tap_mute
+/// \param user_id id của người dùng
+///
+/// \param user_city Ha Noi, Ho Chi Minh
+///
+/// \param mute_status on/off
+///
+/// \param call_session_id lấy giá trị uuid [[NSUUID UUID] UUIDString]
+///
+- (void)eventTrackingCallTapMuteWithReceive:(BOOL)receive params:(NSDictionary<NSString *, id> * _Nonnull)params;
+/// Hàm thực hiện tracking customer_call_tap_end
+/// \param user_id id của người dùng
+///
+/// \param user_city Ha Noi, Ho Chi Minh
+///
+/// \param call_duration (in second)
+///
+/// \param waiting_duration thời gian chờ dành cho cuộc gọi đi
+///
+/// \param is_timeout Yes/No dành cho cuộc gọi đi
+///
+/// \param mute_status on/off
+///
+/// \param call_session_id lấy giá trị uuid [[NSUUID UUID] UUIDString]
+///
+- (void)eventTrackingCallTapEndWithReceive:(BOOL)receive params:(NSDictionary<NSString *, id> * _Nonnull)params;
+/// Hàm thực hiện tracking tap_on_call
+/// \param call_type loại cuộc gọi miễn phí hoặc trả phí ( có giá trị: Free hoặc Paid)
+///
+/// \param caller_id id của người gọi
+///
+/// \param caller_lat vĩ độ của người gọi, lấy vĩ độ của vị trí hiện tại
+///
+/// \param caller_long kinh độ của người gọi, lấy kinh độ của vị trí hiện tại
+///
+/// \param caller_network 
+///
+/// \param caller_type loại người dùng ( có giá trị: customer/driver/merchant
+///
+/// \param receiver_id id của người nhận
+///
+/// \param receiver_type loại người nhận ( có giá trị: customer/driver/merchant
+///
+/// \param timestamp thời gian hiện tại
+///
+/// \param trip_id id của chuyến đi
+///
+/// \param call_session_id lấy giá trị uuid [[NSUUID UUID] UUIDString]
+///
+- (void)eventTrackingTapOnCallWithParams:(NSDictionary<NSString *, id> * _Nonnull)params;
+/// Hàm thực hiện tracking receive_in_app_call
+/// <ul>
+///   <li>
+///     Parameters: Người nhận chính là mình
+///     <ul>
+///       <li>
+///         receiver_id:      id của người nhận cuộc gọi
+///       </li>
+///       <li>
+///         receiver_lat:     vĩ độ của người nhận
+///       </li>
+///       <li>
+///         receiver_long:    kinh độ của người nhận
+///       </li>
+///       <li>
+///         receiver_network:
+///       </li>
+///       <li>
+///         receiver_type:    loại người nhận ( có giá trị: customer/driver/merchant)
+///       </li>
+///       <li>
+///         timestamp:        thời gian hiện tại nhận cuộc gọi
+///       </li>
+///       <li>
+///         call_sesion_id:   lấy giá trị uuid [[NSUUID UUID] UUIDString]
+///       </li>
+///     </ul>
+///   </li>
+/// </ul>
+- (void)eventTrackingReceiverInAppCallWithParams:(NSDictionary<NSString *, id> * _Nonnull)params;
+/// Hàm thực hiện tracking response_in_app_call
+/// <ul>
+///   <li>
+///     Parameters: Người nhận chính là mình
+///     <ul>
+///       <li>
+///         receiver_id:      id của người nhận cuộc gọi
+///       </li>
+///       <li>
+///         receiver_lat:     vĩ độ của người nhận
+///       </li>
+///       <li>
+///         receiver_long:    kinh độ của người nhận
+///       </li>
+///       <li>
+///         receiver_type:    loại người nhận ( có giá trị: customer/driver/merchant)
+///       </li>
+///       <li>
+///         receiver_network:
+///       </li>
+///       <li>
+///         timestamp: thời   gian hiện tại nhận cuộc gọi
+///       </li>
+///       <li>
+///         call_sesion_id:
+///       </li>
+///       <li>
+///         receiver_action:  hành động của người nhận (accept/reject/timeout)
+///       </li>
+///     </ul>
+///   </li>
+/// </ul>
+- (void)eventTrackingResponseInAppCallWithParams:(NSDictionary<NSString *, id> * _Nonnull)params;
+/// Hàm thực hiện tracking receive_number_to_call
+/// \param request_number 
+///
+/// \param receiver_masking_number Số điện thoại giấu số
+///
+/// \param receiver_real_number Số điện thoại
+///
+- (void)eventTrackingReceiveNumberToCallWithParams:(NSDictionary<NSString *, id> * _Nonnull)params;
+@end
 
 @class NSCoder;
 
@@ -389,6 +530,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import CoreGraphics;
+@import ObjectiveC;
 @import QuartzCore;
 @import UIKit;
 #endif
@@ -407,6 +549,146 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="BEMaskingCall",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
+
+
+SWIFT_CLASS("_TtC13BEMaskingCall26BeMaskingCallEventTracking")
+@interface BeMaskingCallEventTracking : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BeMaskingCallEventTracking * _Nonnull shared;)
++ (BeMaskingCallEventTracking * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// Hàm thực hiện tracking call_tap_speaker
+/// \param user_id id của người dùng
+///
+/// \param user_city Ha Noi, Ho Chi Minh
+///
+/// \param speaker_status on/off
+///
+/// \param call_session_id lấy giá trị uuid [[NSUUID UUID] UUIDString]
+///
+- (void)eventTrackingCallTapSpeakerWithReceive:(BOOL)receive params:(NSDictionary<NSString *, id> * _Nonnull)params;
+/// Hàm thực hiện tracking customer_call_tap_mute
+/// \param user_id id của người dùng
+///
+/// \param user_city Ha Noi, Ho Chi Minh
+///
+/// \param mute_status on/off
+///
+/// \param call_session_id lấy giá trị uuid [[NSUUID UUID] UUIDString]
+///
+- (void)eventTrackingCallTapMuteWithReceive:(BOOL)receive params:(NSDictionary<NSString *, id> * _Nonnull)params;
+/// Hàm thực hiện tracking customer_call_tap_end
+/// \param user_id id của người dùng
+///
+/// \param user_city Ha Noi, Ho Chi Minh
+///
+/// \param call_duration (in second)
+///
+/// \param waiting_duration thời gian chờ dành cho cuộc gọi đi
+///
+/// \param is_timeout Yes/No dành cho cuộc gọi đi
+///
+/// \param mute_status on/off
+///
+/// \param call_session_id lấy giá trị uuid [[NSUUID UUID] UUIDString]
+///
+- (void)eventTrackingCallTapEndWithReceive:(BOOL)receive params:(NSDictionary<NSString *, id> * _Nonnull)params;
+/// Hàm thực hiện tracking tap_on_call
+/// \param call_type loại cuộc gọi miễn phí hoặc trả phí ( có giá trị: Free hoặc Paid)
+///
+/// \param caller_id id của người gọi
+///
+/// \param caller_lat vĩ độ của người gọi, lấy vĩ độ của vị trí hiện tại
+///
+/// \param caller_long kinh độ của người gọi, lấy kinh độ của vị trí hiện tại
+///
+/// \param caller_network 
+///
+/// \param caller_type loại người dùng ( có giá trị: customer/driver/merchant
+///
+/// \param receiver_id id của người nhận
+///
+/// \param receiver_type loại người nhận ( có giá trị: customer/driver/merchant
+///
+/// \param timestamp thời gian hiện tại
+///
+/// \param trip_id id của chuyến đi
+///
+/// \param call_session_id lấy giá trị uuid [[NSUUID UUID] UUIDString]
+///
+- (void)eventTrackingTapOnCallWithParams:(NSDictionary<NSString *, id> * _Nonnull)params;
+/// Hàm thực hiện tracking receive_in_app_call
+/// <ul>
+///   <li>
+///     Parameters: Người nhận chính là mình
+///     <ul>
+///       <li>
+///         receiver_id:      id của người nhận cuộc gọi
+///       </li>
+///       <li>
+///         receiver_lat:     vĩ độ của người nhận
+///       </li>
+///       <li>
+///         receiver_long:    kinh độ của người nhận
+///       </li>
+///       <li>
+///         receiver_network:
+///       </li>
+///       <li>
+///         receiver_type:    loại người nhận ( có giá trị: customer/driver/merchant)
+///       </li>
+///       <li>
+///         timestamp:        thời gian hiện tại nhận cuộc gọi
+///       </li>
+///       <li>
+///         call_sesion_id:   lấy giá trị uuid [[NSUUID UUID] UUIDString]
+///       </li>
+///     </ul>
+///   </li>
+/// </ul>
+- (void)eventTrackingReceiverInAppCallWithParams:(NSDictionary<NSString *, id> * _Nonnull)params;
+/// Hàm thực hiện tracking response_in_app_call
+/// <ul>
+///   <li>
+///     Parameters: Người nhận chính là mình
+///     <ul>
+///       <li>
+///         receiver_id:      id của người nhận cuộc gọi
+///       </li>
+///       <li>
+///         receiver_lat:     vĩ độ của người nhận
+///       </li>
+///       <li>
+///         receiver_long:    kinh độ của người nhận
+///       </li>
+///       <li>
+///         receiver_type:    loại người nhận ( có giá trị: customer/driver/merchant)
+///       </li>
+///       <li>
+///         receiver_network:
+///       </li>
+///       <li>
+///         timestamp: thời   gian hiện tại nhận cuộc gọi
+///       </li>
+///       <li>
+///         call_sesion_id:
+///       </li>
+///       <li>
+///         receiver_action:  hành động của người nhận (accept/reject/timeout)
+///       </li>
+///     </ul>
+///   </li>
+/// </ul>
+- (void)eventTrackingResponseInAppCallWithParams:(NSDictionary<NSString *, id> * _Nonnull)params;
+/// Hàm thực hiện tracking receive_number_to_call
+/// \param request_number 
+///
+/// \param receiver_masking_number Số điện thoại giấu số
+///
+/// \param receiver_real_number Số điện thoại
+///
+- (void)eventTrackingReceiveNumberToCallWithParams:(NSDictionary<NSString *, id> * _Nonnull)params;
+@end
 
 @class NSCoder;
 
