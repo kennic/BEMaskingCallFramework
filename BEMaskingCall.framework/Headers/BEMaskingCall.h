@@ -22,7 +22,7 @@ FOUNDATION_EXPORT const unsigned char BEMaskingCallVersionString[];
 #import <BEMaskingCall/BEMaskingCallConfiguration.h>
 #import <BEMaskingCall/RideInfoModel.h>
 #import <BEMaskingCall/UserModel.h>
-#import <BEMaskingCall/BeCustomerInfoModel.h>
+#import <BEMaskingCall/BeCallerInfoModel.h>
 #import <BEMaskingCall/CalloutNumberModel.h>
 //#import <BEMaskingCall/ConfigMaskingCallModel.h>
 #import <BEMaskingCall/GlobalService.h>

@@ -1,5 +1,5 @@
 //
-//  BeCustomerInfoModel.h
+//  BeCallerInfoModel.h
 //  BeMaskingCall
 //
 //  Created by manh.le on 5/23/19.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface BeCustomerInfoModel : NSObject
+@interface BeCallerInfoModel : NSObject
 @property(nonatomic, strong) NSString *userIDString;
 @property(nonatomic, strong) NSString *userNameString;
 @property(nonatomic, strong) NSString *userEmailString;

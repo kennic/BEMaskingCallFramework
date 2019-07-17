@@ -11,7 +11,7 @@
 #import <CallKit/CallKit.h>
 #import "UserModel.h"
 //#import "ConfigMaskingCallModel.h"
-#import "BeCustomerInfoModel.h"
+#import "BeCallerInfoModel.h"
 #import "RideInfoModel.h"
 #import "CallingViewController.h"
 #import "BEMaskingCallConfiguration.h"
@@ -35,18 +35,31 @@ typedef NS_ENUM(NSInteger, BECallingState) {
 	BECallingStateNormal = 2,
 };
 
-@protocol SPManagerDelegate <NSObject>
+/// Các trạng thái dẫn đến timeout
+typedef NS_ENUM(NSInteger, BEMaskingCallFailReason) {
+    // timeout do lỗi mạng
+    BEMaskingCallFailReasonNetworkError = 0,
+    /// timeout do lỗi kết nối Stringee
+    BEMaskingCallFailReasonStringeeError = 1,
+    /// timeout do người dùng cúp máy
+    BEMaskingCallFailReasonReceiverHangup = 2,
+    /// timedout, hết thời gian quy định
+    BEMaskingCallFailReasonTimedout = 3
+};
 
-- (void) showAlertViewGoingOutTimeoutEngagementID:(NSString*)engagementID;
+@protocol BEMaskingCallDelegate <NSObject>
+
+- (void) inAppCallingDidFailWithReason:(BEMaskingCallFailReason)reason engagementId:(NSString*)engagementID;
 - (void) willPresentCallingViewController:(CallingViewController*)vc animated:(BOOL)animated;
 - (void) didEndCalling;
-- (void) openCallOSWith:(NSString*)phoneNumber;
+- (void) requestOSCallWith:(NSString*)phoneNumber;
+
 @end
 
 @interface SPManager : NSObject
 
 + (SPManager *)instance;
-@property (nonatomic, weak) id<SPManagerDelegate> delegate;
+@property (nonatomic, weak) id<BEMaskingCallDelegate> delegate;
 @property (strong, nonatomic) NSDictionary *allKeys;
 @property (strong, nonatomic) NSMutableArray *listKeys;
 @property (strong, nonatomic) NSMutableDictionary *dicSections;
@@ -70,7 +83,7 @@ typedef NS_ENUM(NSInteger, BECallingState) {
 @property (assign, nonatomic) BOOL enableCallInApp;
 @property (assign, nonatomic) BOOL enableMaskingCall;
 
-@property (strong, nonatomic) BeCustomerInfoModel *customerInfo;
+@property (strong, nonatomic) BeCallerInfoModel *callerInfo;
 @property (strong, nonatomic) RideInfoModel *rideInfo;
 
 @property (nonatomic, strong) NSString *baseURLString;
@@ -84,7 +97,7 @@ typedef NS_ENUM(NSInteger, BECallingState) {
 @property (strong, nonatomic) NSString *myLocationLatitude;
 @property (strong, nonatomic) NSString *myLocationLongitude;
 
--(NSString*) generalCallSessionID;
+- (NSString*) generalCallSessionID;
 - (NSString*) getNumberForCallOut;
 - (BOOL) isSystemCall;
 - (BOOL) isGeneralEnabled;
