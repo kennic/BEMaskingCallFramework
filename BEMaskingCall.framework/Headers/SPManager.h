@@ -109,6 +109,7 @@ typedef NS_ENUM(NSInteger, BEMaskingCallFailReason) {
 - (int) callTimeOut;
 - (NSArray*) maskingNumber;
 - (NSString*) getNumberMaskWithTrip:(NSString*)tripID withDriverPhoneNumber:(NSString*)driverPhoneNumber;
+- (NSString*) readNumberMasking;
 - (void) fetchMaskingNumberDriverID:(NSString*)driverId engagementID:(NSString*)engagementID needStringeeToken:(BOOL)needStringeeToken completionHandler:(void(^)(id numberPhone, BOOL success))completionHandler;
 - (void) putRememberCallOption:(NSString*)option completionHandler:(void(^)(BOOL success))completionHandler;
 - (void) updateConfigMaskingCall:(id)responseObject driverID:(NSString*)driverId engagementID:(NSString*)engagementID;

@@ -320,13 +320,21 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BeMaskingCal
 /// </ul>
 - (void)eventTrackingResponseInAppCallWithParams:(NSDictionary<NSString *, id> * _Nonnull)params;
 /// Hàm thực hiện tracking receive_number_to_call
-/// \param request_number 
+/// \param request_number lấy giá trị call_session_id của tap_on_call
 ///
-/// \param receiver_masking_number Số điện thoại giấu số
+/// \param customer_selection Lựa chọn giấu số hay số thực (có giá trị: masking/real number)
 ///
-/// \param receiver_real_number Số điện thoại
+/// \param customer_setting Cài đặt nhớ số thực hay số  (có giá trị: ON/OFF/Empty)
 ///
-- (void)eventTrackingReceiveNumberToCallWithParams:(NSDictionary<NSString *, id> * _Nonnull)params;
+/// \param Masking_number Là số masking
+///
+/// \param Real_number Là số thực
+///
+/// \param display_number số điện thoại được sử dụng
+///
+/// \param timestamp Thời gian cuộc gọi
+///
+- (void)eventTrackingDisplayNumberPaidCallWithParams:(NSDictionary<NSString *, id> * _Nonnull)params;
 @end
 
 @class NSCoder;
@@ -681,13 +689,21 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BeMaskingCal
 /// </ul>
 - (void)eventTrackingResponseInAppCallWithParams:(NSDictionary<NSString *, id> * _Nonnull)params;
 /// Hàm thực hiện tracking receive_number_to_call
-/// \param request_number 
+/// \param request_number lấy giá trị call_session_id của tap_on_call
 ///
-/// \param receiver_masking_number Số điện thoại giấu số
+/// \param customer_selection Lựa chọn giấu số hay số thực (có giá trị: masking/real number)
 ///
-/// \param receiver_real_number Số điện thoại
+/// \param customer_setting Cài đặt nhớ số thực hay số  (có giá trị: ON/OFF/Empty)
 ///
-- (void)eventTrackingReceiveNumberToCallWithParams:(NSDictionary<NSString *, id> * _Nonnull)params;
+/// \param Masking_number Là số masking
+///
+/// \param Real_number Là số thực
+///
+/// \param display_number số điện thoại được sử dụng
+///
+/// \param timestamp Thời gian cuộc gọi
+///
+- (void)eventTrackingDisplayNumberPaidCallWithParams:(NSDictionary<NSString *, id> * _Nonnull)params;
 @end
 
 @class NSCoder;
