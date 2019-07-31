@@ -44,7 +44,9 @@ typedef NS_ENUM(NSInteger, BEMaskingCallFailReason) {
     /// timeout do người dùng cúp máy
     BEMaskingCallFailReasonReceiverHangup = 2,
     /// timedout, hết thời gian quy định
-    BEMaskingCallFailReasonTimedout = 3
+    BEMaskingCallFailReasonTimedout = 3,
+	/// timeout do người dùng cúp máy
+	BEMaskingCallFailReasonReceiverDidNotPickup = 4
 };
 
 @protocol BEMaskingCallDelegate <NSObject>
