@@ -15,6 +15,7 @@
 #import "RideInfoModel.h"
 #import "CallingViewController.h"
 #import "BEMaskingCallConfiguration.h"
+#import <CoreLocation/CoreLocation.h>
 
 typedef NS_ENUM(NSInteger, SyncStateCalling) {
     // Chưa có cuộc gọi
@@ -94,10 +95,9 @@ typedef NS_ENUM(NSInteger, BEMaskingCallFailReason) {
 @property (assign, nonatomic) BOOL isDriver;
 @property (nonatomic, strong) UIViewController *presentViewController;
 @property (strong, nonatomic) CallingViewController *callingViewController;
-@property (strong, nonatomic) NSString *callSesstionID;
+@property (strong, nonatomic) NSString *callSessionID;
 @property (strong, nonatomic) NSString *cityDevice;
-@property (strong, nonatomic) NSString *myLocationLatitude;
-@property (strong, nonatomic) NSString *myLocationLongitude;
+@property (assign, nonatomic) CLLocationCoordinate2D myLocation;
 
 - (NSString*) generalCallSessionID;
 - (NSString*) getNumberForCallOut;
