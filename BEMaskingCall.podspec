@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
 spec.name         = "BeMaskingCall"
-spec.version      = "1.6.1"
+spec.version      = "1.6.2"
 spec.summary      = "BEMaskingCall for be"
 spec.description  = "This is frameWork allows you to make a voip call"
 spec.homepage     = "https://github.com/kennic/BEMaskingCallFramework.git"
@@ -9,7 +9,7 @@ spec.license      = { :type => "MIT", :text => "The MIT License (MIT) \n Copyrig
 spec.author       = { "uncleliz" => "dinhmanhvp@gmail.com" }
 spec.source       = { :git => "https://github.com/kennic/BEMaskingCallFramework.git", :branch => 'master', :tag => spec.version }
 spec.ios.vendored_frameworks   = 'BeMaskingCall.framework'
-spec.ios.deployment_target = '10.0'
+spec.ios.deployment_target = '9.0'
 spec.ios.dependency "AFNetworking"
 spec.ios.dependency "Stringee"
 #spec.static_framework = true
