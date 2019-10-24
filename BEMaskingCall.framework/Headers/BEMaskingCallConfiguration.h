@@ -34,6 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 	@property NSString *missedCallText; // Bạn đã bỏ lỡ cuộc gọi từ %@
 	@property NSString *receivedByOtherText; // Cuộc gọi đã được nhận ở thiết bị khác
     @property NSString *receiverNotAccepted; // Người nhận không bắt máy
+    @property NSString *speakerText; // Loa ngoài
+    @property NSString *muteText; // Tắt tiếng
 
 	@property NSString *strLabelTitle;
 	@property NSString *strTracking_Receive_Call_Tap_Speaker;
