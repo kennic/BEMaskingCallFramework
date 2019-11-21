@@ -15,10 +15,17 @@ NS_ASSUME_NONNULL_BEGIN
 	@property UIColor *textColor;
 	@property UIColor *backgroundColor;
 	@property UIImage *backgroundImage;
+    @property BOOL enableVisualBackground;
+    @property UIImage *avatarImage;
+    @property UIColor *avatarShadowColor;
 	@property UIImage *speakerOnButtonImage;
 	@property UIImage *speakerOffButtonImage;
+    @property UIImage *speakerOnIconImage;
+    @property UIImage *speakerOffIconImage;
 	@property UIImage *muteOnButtonImage;
 	@property UIImage *muteOffButtonImage;
+    @property UIImage *muteOnIconImage;
+    @property UIImage *muteOffIconImage;
 	@property UIImage *acceptButtonImage;
 	@property UIImage *declineButtonImage;
 	@property UIImage *endCallButtonImage;

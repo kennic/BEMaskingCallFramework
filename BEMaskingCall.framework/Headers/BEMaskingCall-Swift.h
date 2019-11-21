@@ -367,6 +367,8 @@ SWIFT_CLASS("_TtC13BEMaskingCall23ConfirmMaskingCallAlert")
 
 SWIFT_CLASS("_TtC13BEMaskingCall20PulsingAnimationCall")
 @interface PulsingAnimationCall : CAReplicatorLayer <CAAnimationDelegate>
+@property (nonatomic) CGFloat borderWidth;
+@property (nonatomic) CGColorRef _Nullable borderColor;
 @property (nonatomic) CGColorRef _Nullable backgroundColor;
 @property (nonatomic) float repeatCount;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -751,6 +753,8 @@ SWIFT_CLASS("_TtC13BEMaskingCall23ConfirmMaskingCallAlert")
 
 SWIFT_CLASS("_TtC13BEMaskingCall20PulsingAnimationCall")
 @interface PulsingAnimationCall : CAReplicatorLayer <CAAnimationDelegate>
+@property (nonatomic) CGFloat borderWidth;
+@property (nonatomic) CGColorRef _Nullable borderColor;
 @property (nonatomic) CGColorRef _Nullable backgroundColor;
 @property (nonatomic) float repeatCount;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;

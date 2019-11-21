@@ -43,9 +43,13 @@ typedef NS_ENUM(NSInteger, ScreenMode) {
 @property (weak, nonatomic) IBOutlet UILabel *labelPhoneNumber;
 @property (weak, nonatomic) IBOutlet UILabel *labelConnecting;
 @property (weak, nonatomic) IBOutlet UILabel *labelUsername;
+@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UIButton *buttonMute;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewMute;
 @property (weak, nonatomic) IBOutlet UIButton *buttonSpeaker;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewSpeaker;
 @property (weak, nonatomic) IBOutlet UIView *blurView;
+@property (weak, nonatomic) IBOutlet UIView *visualEffectView;
 @property (weak, nonatomic) IBOutlet UIButton *buttonEndCall;
 @property (weak, nonatomic) IBOutlet UIButton *buttonDecline;
 @property (weak, nonatomic) IBOutlet UIButton *buttonAccept;
